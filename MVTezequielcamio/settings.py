@@ -54,7 +54,7 @@ ROOT_URLCONF = 'MVTezequielcamio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\camin\OneDrive\Escritorio\MVT-EzequielCamino\MVT-ezequielcamino\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
