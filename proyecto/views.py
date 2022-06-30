@@ -2,7 +2,8 @@ from django import template
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Template, loader
-from proyecto.models import lista_personas
+from .models import Listado
+
 
 # Create your views here.
 
@@ -14,9 +15,12 @@ def listado(request):
     
     template = loader.get_template('listado.html')
 
-
-    template1 = lista_personas.objects.all()
-
-    render = template.render({'lista_personas': template1})
+    prueba1 = Listado('pepe', 34)
+    prueba2 = Listado('juancito', 4)
+    prueba3 = Listado('jacinto', 56)
+    prueba1.save()
+    prueba2.save()
+    prueba3.save()
+    render = Template.render({'listado':[prueba1,prueba2,prueba3]})
 
     return HttpResponse(render)
