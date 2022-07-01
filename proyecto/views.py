@@ -10,17 +10,17 @@ from .models import Listado
 def una_vista(request):
     return HttpResponse('<h1> la pipol</h1>')
 
-
+#en las variables pruebas, me pidió los ID de los objetos a guardar en la DB, es por eso que los puse. 
 def listado(request):
     
-    template = loader.get_template('listado.html')
+    cargando = loader.get_template('listado.html')
 
-    prueba1 = Listado('pepe', 34)
-    prueba2 = Listado('juancito', 4)
-    prueba3 = Listado('jacinto', 56)
+    prueba1 = Listado(1,'pepito', 78)
+    prueba2 = Listado(2,'juancito',56)
+    prueba3 = Listado(3,'manuelita',15)
     prueba1.save()
     prueba2.save()
     prueba3.save()
-    render = Template.render({'listado':[prueba1,prueba2,prueba3]})
+    render = cargando.render({'listado':[prueba1, prueba2, prueba3]})
 
     return HttpResponse(render)
